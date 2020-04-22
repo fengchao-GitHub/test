@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fdc.dao.UserDao">
+
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <delete id="deleteById">
+        DELETE FROM user where userId=#{userId}
+    </delete>
+
+    <select id="selectAll" resultType="user">
+        select * from user
+    </select>
+
+    <select id="selectById" resultType="user">
+          select * from user where userId=#{userId}
+    </select>
+
+    <select id="selectlike" resultType="user">
+          select * from user where userId like  CONCAT(CONCAT('%', #{userId}), '%');
+    </select>
+
+    <select id="ifExist" >
+          select count(*) from user where userId=#{userId}
+    </select>
+
+    <insert id="insert" >
+        insert into user values(#{userId},#{passWord},#{birth},#{money})
+    </insert>
+
+    <insert id="update" >
+        insert into user values(#{userId},#{passWord},#{birth},#{money})
+    </insert>
+
+</mapper>
