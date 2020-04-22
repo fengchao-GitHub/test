@@ -1,8 +1,6 @@
 just for test!
 do you see it ?!
-<<<<<<< HEAD
 test : dose it can be commited?
-=======
 are you see it again?
 and again!!!
->>>>>>> ab52f440a12588f4a1d2924a693557405f6a9380
+
